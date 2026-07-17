@@ -6,7 +6,7 @@
 
 // ---------- НАСТРОЙКИ ----------
 const SETTINGS = {
-    spinTime: 5000,
+    spinTime: 10000,
     cardWidth: 320,
     gap: 50,
     repeat: false // повторение танков при исчерпании списка
