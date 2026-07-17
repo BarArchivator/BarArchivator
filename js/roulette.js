@@ -555,7 +555,7 @@ const start =
 
 
 const distance =
-finish - start;
+finish + 2000 - start;
 
 
 
@@ -617,11 +617,6 @@ finish - start;
 
         }
         else{
-
-
-            this.track.style.transform =
-            `translateX(${-finish}px)`;
-
 
 
             this.nameBox.textContent =
