@@ -4,11 +4,9 @@
 <head>
 
     <meta charset="UTF-8">
-
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>Жеребьёвка техники</title>
-
 
     <link rel="stylesheet" href="../css/roulette.css">
 
@@ -20,48 +18,28 @@
 
 <header class="top-panel">
 
-
-    <h1>
-        ЖЕРЕБЬЁВКА ТЕХНИКИ
-    </h1>
-
+    <h1>ЖЕРЕБЬЁВКА ТЕХНИКИ</h1>
 
 
     <div class="panel-right">
 
-
         <label class="repeat">
 
+            <input type="checkbox" id="repeatMode">
 
-            <input 
-            type="checkbox" 
-            id="repeatMode">
-
-
-            <span>
-                Повторение
-            </span>
-
+            <span>Повторение</span>
 
         </label>
 
 
-
-
         <button id="battleButton">
-
             В БОЙ!
-
         </button>
-
 
 
     </div>
 
-
 </header>
-
-
 
 
 
@@ -69,166 +47,82 @@
 
 
 
+    <!-- ТЯЖЕЛЫЕ ТАНКИ -->
+
+    <section class="tank-column" id="tt">
+
+        <h2>ТТ</h2>
 
 
-<!-- ================= ТТ ================= -->
+        <div class="roller-window">
 
+            <div class="center-line"></div>
 
-<section class="tank-column">
+            <div class="roller-track" id="ttTrack"></div>
 
-
-    <h2>
-        ТТ
-    </h2>
-
-
-
-    <div class="roller-window">
-
-
-        <div class="center-line"></div>
-
-
-
-        <div 
-        class="roller-track" 
-        id="ttTrack">
         </div>
 
 
-
-        <img 
-        class="result-tank" 
-        id="ttResult">
-
-
-
-    </div>
-
-
-
-    <div 
-    class="tank-name" 
-    id="ttName">
-
-        ...
-
-    </div>
-
-
-
-</section>
-
-
-
-
-
-
-
-<!-- ================= СТ ================= -->
-
-
-<section class="tank-column">
-
-
-    <h2>
-        СТ
-    </h2>
-
-
-
-    <div class="roller-window">
-
-
-        <div class="center-line"></div>
-
-
-
-        <div 
-        class="roller-track" 
-        id="stTrack">
+        <div class="tank-name" id="ttName">
+            ...
         </div>
 
 
-
-        <img 
-        class="result-tank" 
-        id="stResult">
-
-
-
-    </div>
-
-
-
-    <div 
-    class="tank-name" 
-    id="stName">
-
-        ...
-
-    </div>
-
-
-
-</section>
+    </section>
 
 
 
 
 
+    <!-- СРЕДНИЕ ТАНКИ -->
+
+    <section class="tank-column" id="st">
+
+        <h2>СТ</h2>
 
 
+        <div class="roller-window">
 
-<!-- ================= ПТ ================= -->
+            <div class="center-line"></div>
 
+            <div class="roller-track" id="stTrack"></div>
 
-<section class="tank-column">
-
-
-    <h2>
-        ПТ-САУ
-    </h2>
-
-
-
-    <div class="roller-window">
-
-
-        <div class="center-line"></div>
-
-
-
-        <div 
-        class="roller-track" 
-        id="ptTrack">
         </div>
 
 
-
-        <img 
-        class="result-tank" 
-        id="ptResult">
-
+        <div class="tank-name" id="stName">
+            ...
+        </div>
 
 
-    </div>
+    </section>
 
 
 
-    <div 
-    class="tank-name" 
-    id="ptName">
-
-        ...
-
-    </div>
 
 
+    <!-- ПТ-САУ -->
 
-</section>
+    <section class="tank-column" id="pt">
+
+        <h2>ПТ-САУ</h2>
 
 
+        <div class="roller-window">
+
+            <div class="center-line"></div>
+
+            <div class="roller-track" id="ptTrack"></div>
+
+        </div>
+
+
+        <div class="tank-name" id="ptName">
+            ...
+        </div>
+
+
+    </section>
 
 
 
@@ -236,9 +130,8 @@
 
 
 
+<script src="../js/roulette.js"></script>
 
-
-<script src="../js/roulette.js?v=2"></script>
 
 </body>
 
