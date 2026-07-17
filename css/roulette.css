@@ -1,437 +1,245 @@
 /* =========================
    ОБЩИЕ НАСТРОЙКИ
 ========================= */
-
 *{
     margin:0;
     padding:0;
     box-sizing:border-box;
 }
-
 html,
 body{
     width:100%;
     height:100%;
     overflow:hidden;
-
     font-family:Arial, Helvetica, sans-serif;
-
     background:#151515;
     color:#fff;
 }
-
 /* =========================
         ВЕРХНЯЯ ПАНЕЛЬ
 ========================= */
-
 .top-panel{
-
     width:100%;
     height:90px;
-
     display:flex;
     justify-content:center;
     align-items:center;
-
     position:relative;
-
     border-bottom:1px solid rgba(255,255,255,.08);
-
 }
-
 .top-panel h1{
-
     font-size:42px;
-
     letter-spacing:3px;
-
     color:#f7d05b;
-
     text-shadow:
             0 0 12px rgba(247,208,91,.5);
-
 }
-
 .panel-right{
-
     position:absolute;
-
     right:40px;
-
     display:flex;
-
     align-items:center;
-
     gap:25px;
-
 }
-
 /* =========================
         ЧЕКБОКС
 ========================= */
-
 .repeat{
-
     display:flex;
-
     align-items:center;
-
     gap:10px;
-
     font-size:18px;
-
     user-select:none;
-
 }
-
 .repeat input{
-
     width:22px;
-
     height:22px;
-
     cursor:pointer;
-
 }
-
 /* =========================
         КНОПКА
 ========================= */
-
 #battleButton{
-
     width:220px;
-
     height:62px;
-
     cursor:pointer;
-
     border:none;
-
     font-size:22px;
-
     font-weight:bold;
-
     color:white;
-
     border-radius:12px;
-
     background:
             linear-gradient(#ffb545,#d87800);
-
     box-shadow:
-
             0 8px 20px rgba(255,140,0,.45),
-
             inset 0 1px rgba(255,255,255,.4);
-
     transition:.18s;
-
 }
-
 #battleButton:hover{
-
     transform:translateY(-2px);
-
     filter:brightness(1.08);
-
 }
-
 #battleButton:active{
-
     transform:scale(.97);
-
 }
-
 #battleButton:disabled{
-
     opacity:.55;
-
     cursor:default;
-
 }
-
 /* =========================
       ОСНОВНОЙ БЛОК
 ========================= */
-
 .roulette-container{
-
     width:100%;
     height:calc(100% - 90px);
-
     display:flex;
-
     justify-content:space-evenly;
-
     align-items:center;
-
 }
-
 /* =========================
       КОЛОНКА
 ========================= */
-
 .tank-column{
-
     width:31%;
-
     display:flex;
-
     flex-direction:column;
-
     align-items:center;
-
 }
-
 .tank-column h2{
-
     margin-bottom:28px;
-
     font-size:42px;
-
     color:#f7d05b;
-
     letter-spacing:2px;
-
 }
-
 /* =========================
       ОКНО РУЛЕТКИ
 ========================= */
-
 .roller-window{
-
     width:100%;
-
     max-width:560px;
-
     height:340px;
-
     position:relative;
-
     overflow:hidden;
-
     border-radius:16px;
-
     background:
-
         linear-gradient(
-
             rgba(255,255,255,.03),
-
             rgba(255,255,255,.01)
-
         );
-
     border:1px solid rgba(255,255,255,.08);
-
 }
-
 /* =========================
         ЦЕНТР
 ========================= */
-
 .center-line{
-
     position:absolute;
-
     left:50%;
-
     top:0;
-
     transform:translateX(-50%);
-
     width:330px;
-
     height:100%;
-
     border-left:2px solid rgba(255,220,120,.7);
-
     border-right:2px solid rgba(255,220,120,.7);
-
     background:
-
             linear-gradient(
-
             90deg,
-
             rgba(255,220,120,0),
-
             rgba(255,220,120,.14),
-
             rgba(255,220,120,.14),
-
             rgba(255,220,120,0)
-
             );
-
     z-index:5;
-
     pointer-events:none;
-
 }
-
 /* =========================
         ЛЕНТА
 ========================= */
-
 .roller-track{
-
     position:absolute;
-
     left:0;
-
     top:0;
-
     height:100%;
-
     display:flex;
-
     align-items:center;
-
     gap:50px;
-
     will-change:transform;
-
 }
-
 /* =========================
       КАРТОЧКА
 ========================= */
-
 .tank-card{
-
     width:320px;
-
     height:320px;
-
     display:flex;
-
     justify-content:center;
-
     align-items:center;
-
     flex-shrink:0;
-
 }
-
 .tank-card img{
-
     width:100%;
-
     height:100%;
-
     object-fit:contain;
-
     pointer-events:none;
-
     user-select:none;
-
 }
-
+/* Эффект подсвечивания (добавлено) */
+.tank-card.selected img {
+    transform: scale(1.08);
+    transition: transform .3s ease-out;
+}
 /* =========================
       НАЗВАНИЕ
 ========================= */
-
 .tank-name{
-
     margin-top:25px;
-
     min-height:38px;
-
     font-size:30px;
-
     font-weight:bold;
-
     color:white;
-
     text-align:center;
-
     text-shadow:
-
             0 0 12px rgba(255,255,255,.35);
-
 }
-
 /* =========================
         ПОДСВЕТКА
 ========================= */
-
 .selected{
-
     animation:selectedTank .45s ease;
-
 }
-
 @keyframes selectedTank{
-
     0%{
-
         transform:scale(1);
-
     }
-
     50%{
-
         transform:scale(1.08);
-
     }
-
     100%{
-
         transform:scale(1);
-
     }
-
 }
-
 /* =========================
         АДАПТАЦИЯ
 ========================= */
-
 @media(max-width:1600px){
-
     .roller-window{
-
         height:300px;
-
     }
-
     .tank-card{
-
         width:280px;
-
         height:280px;
-
     }
-
     .center-line{
-
         width:290px;
-
     }
-
 }
-
 @media(max-width:1300px){
-
     .top-panel h1{
-
         font-size:34px;
-
     }
-
     .tank-column h2{
-
         font-size:34px;
-
     }
-
     .tank-name{
-
         font-size:24px;
-
     }
-
 }
