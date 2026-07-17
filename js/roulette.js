@@ -1,176 +1,223 @@
 // ======================================================
 // ЖЕРЕБЬЁВКА ТЕХНИКИ
 // Бар Архиватор
-// Версия 1.0
+// Версия 1.1
 // ======================================================
+
 
 // ---------- НАСТРОЙКИ ----------
 
+
 const SETTINGS = {
 
-    spinTime: 10000,          // 10 секунд
+    spinTime: 10000,
 
-    cardWidth: 370,
+    cardWidth: 320,
 
     gap: 50,
 
-    repeat: false
+    repeat:false
 
 };
 
 
-// ---------- СПИСКИ ТАНКОВ ----------
+
+// ---------- СПИСОКИ ТАНКОВ ----------
+
 
 const TANKS = {
 
-    TT: [
 
-        "113",
-        "WZ-111 model 5A",
-        "BZ-75",
-        "GPT-75",
-        "BZ-74-1",
-        "116-F3",
-        "AMX 50 B",
-        "AMX M4 mle. 54",
-        "Projet 57",
-        "Maus",
-        "E 100",
-        "Pz.Kpfw. VII",
-        "Kampfpanzer 07 P(E)",
-        "VK 72.01 (K)",
-        "Е 100 Feuerbär",
-        "Type 5 Heavy",
-        "Type 71",
-        "FV215b",
-        "Super Conqueror",
-        "Vandal",
-        "T95/FV4201 Chieftain",
-        "FV242B Condor",
-        "ИС-4",
-        "ИС-7",
-        "Объект 705А",
-        "Объект 277",
-        "СТ-II",
-        "Объект 780",
-        "Объект 279 ранний",
-        "Объект 260",
-        "ТЭТ-100",
-        "Объект 718Б",
-        "Объект 278",
-        "T110E5",
-        "T57 Heavy Tank",
-        "M-V-Y",
-        "H-3",
-        "Astron-FL",
-        "Vz. 55",
-        "Warrior",
-        "Kranvagn",
-        "60TP Lewandowskiego",
-        "Czołg (P) wz.46",
-        "Rinoceronte",
-        "Orso"
+TT:[
 
-    ],
+"113",
+"WZ-111 model 5A",
+"BZ-75",
+"GPT-75",
+"BZ-74-1",
+"116-F3",
+"AMX 50 B",
+"AMX M4 mle. 54",
+"Projet 57",
+"Maus",
+"E 100",
+"Pz.Kpfw. VII",
+"Kampfpanzer 07 P(E)",
+"VK 72.01 (K)",
+"Е 100 Feuerbär",
+"Type 5 Heavy",
+"Type 71",
+"FV215b",
+"Super Conqueror",
+"Vandal",
+"T95/FV4201 Chieftain",
+"FV242B Condor",
+"ИС-4",
+"ИС-7",
+"Объект 705А",
+"Объект 277",
+"СТ-II",
+"Объект 780",
+"Объект 279 ранний",
+"Объект 260",
+"ТЭТ-100",
+"Объект 718Б",
+"Объект 278",
+"T110E5",
+"T57 Heavy Tank",
+"M-V-Y",
+"H-3",
+"Astron-FL",
+"Vz. 55",
+"Warrior",
+"Kranvagn",
+"60TP Lewandowskiego",
+"Czołg (P) wz.46",
+"Rinoceronte",
+"Orso"
 
-    ST: [
+],
 
-        "121",
-        "121B",
-        "DZT-159",
-        "Bat.-Châtillon 25 t",
-        "AMX 30 B",
-        "E 50 Ausf. M",
-        "Leopard 1",
-        "Erich Konzept I",
-        "STB-1",
-        "Centurion Action X",
-        "Concept No. 5",
-        "Nemesis",
-        "Vulcan",
-        "Т-62А",
-        "Объект 907",
-        "Объект 140",
-        "Объект 430У",
-        "К-91",
-        "Т-22 ср.",
-        "Объект 168-122 Квант",
-        "M48A5 Patton",
-        "M60",
-        "T95E6",
-        "OTAC MT-58",
-        "MBT-59",
-        "TVP T 50/51",
-        "UDES 15/16",
-        "CS-63",
-        "CS-63 Wilk",
-        "Progetto M40 mod. 65",
-        "Lion",
-        "Carro da Combattimento 45 t",
-        "Merkava LP",
-        "T-54D"
 
-    ],
 
-    PT: [
+ST:[
 
-        "WZ-113G FT",
-        "114 SP2",
-        "AMX 50 Foch (155)",
-        "AMX 50 Foch B",
-        "120 AC Gendarme",
-        "Tornade",
-        "Jagdpanzer E 100",
-        "Waffenträger auf E 100",
-        "Grille 15",
-        "Sturmtiger",
-        "StuG Maus 17 cm",
-        "Ho-Ri 3",
-        "FV215b (183)",
-        "FV4005 Stage II",
-        "FV217 Badger",
-        "Объект 268",
-        "Объект 268 Вариант 4",
-        "Объект 268 Вариант 5",
-        "СУ-122В",
-        "Объект 120 «Таран»",
-        "T110E4",
-        "T110E3",
-        "XM57",
-        "Strv 103B",
-        "Wz.70 Żubr",
-        "Controcarro 3 Minotauro"
+"121",
+"121B",
+"DZT-159",
+"Bat.-Châtillon 25 t",
+"AMX 30 B",
+"E 50 Ausf. M",
+"Leopard 1",
+"Erich Konzept I",
+"STB-1",
+"Centurion Action X",
+"Concept No. 5",
+"Nemesis",
+"Vulcan",
+"Т-62А",
+"Объект 907",
+"Объект 140",
+"Объект 430У",
+"К-91",
+"Т-22 ср.",
+"Объект 168-122 Квант",
+"M48A5 Patton",
+"M60",
+"T95E6",
+"OTAC MT-58",
+"MBT-59",
+"TVP T 50/51",
+"UDES 15/16",
+"CS-63",
+"CS-63 Wilk",
+"Progetto M40 mod.65",
+"Lion",
+"Carro da Combattimento 45 t",
+"Merkava LP",
+"T-54D"
 
-    ]
+],
+
+
+
+PT:[
+
+"WZ-113G FT",
+"114 SP2",
+"AMX 50 Foch (155)",
+"AMX 50 Foch B",
+"120 AC Gendarme",
+"Tornade",
+"Jagdpanzer E 100",
+"Waffenträger auf E 100",
+"Grille 15",
+"Sturmtiger",
+"StuG Maus 17 cm",
+"Ho-Ri 3",
+"FV215b (183)",
+"FV4005 Stage II",
+"FV217 Badger",
+"Объект 268",
+"Объект 268 Вариант 4",
+"Объект 268 Вариант 5",
+"СУ-122В",
+"Объект 120 «Таран»",
+"T110E4",
+"T110E3",
+"XM57",
+"Strv 103B",
+"Wz.70 Żubr",
+"Controcarro 3 Minotauro"
+
+]
+
+
+};
+
+
+
+// ---------- ИСПОЛЬЗОВАННЫЕ ТАНКИ ----------
+
+
+const used={
+
+TT:[],
+ST:[],
+PT:[]
 
 };
 
-
-// ---------- ИСПОЛЬЗОВАННЫЕ ----------
-
-const used = {
-
-    TT: [],
-    ST: [],
-    PT: []
-
-};
 
 
 // ---------- DOM ----------
 
-const battleButton = document.getElementById("battleButton");
 
-const repeatBox = document.getElementById("repeatMode");
+const battleButton =
+document.getElementById("battleButton");
 
-const ttTrack = document.getElementById("ttTrack");
-const stTrack = document.getElementById("stTrack");
-const ptTrack = document.getElementById("ptTrack");
 
-const ttName = document.getElementById("ttName");
-const stName = document.getElementById("stName");
-const ptName = document.getElementById("ptName");
+const repeatBox =
+document.getElementById("repeatMode");
 
+
+
+const ttTrack =
+document.getElementById("ttTrack");
+
+
+const stTrack =
+document.getElementById("stTrack");
+
+
+const ptTrack =
+document.getElementById("ptTrack");
+
+
+
+const ttName =
+document.getElementById("ttName");
+
+
+const stName =
+document.getElementById("stName");
+
+
+const ptName =
+document.getElementById("ptName");
+
+
+
+const ttResult =
+document.getElementById("ttResult");
+
+
+const stResult =
+document.getElementById("stResult");
+
+
+const ptResult =
+document.getElementById("ptResult");
 
 // ======================================================
 // КЛАСС ОДНОЙ РУЛЕТКИ
@@ -180,14 +227,15 @@ const ptName = document.getElementById("ptName");
 class RouletteColumn {
 
 
-    constructor(type, trackElement, nameElement) {
-
+    constructor(type, trackElement, nameElement, resultElement){
 
         this.type = type;
 
         this.track = trackElement;
 
         this.nameBox = nameElement;
+
+        this.resultImg = resultElement;
 
 
         this.used = used[type];
@@ -197,14 +245,15 @@ class RouletteColumn {
 
         this.running = false;
 
-
     }
 
 
 
+
     // ------------------------------------------
-    // Получение доступных танков
+    // Доступные танки
     // ------------------------------------------
+
 
     getAvailableTanks(){
 
@@ -216,11 +265,12 @@ class RouletteColumn {
         }
 
 
-        let available = this.tanks.filter(
 
+        let available =
+        this.tanks.filter(
             tank => !this.used.includes(tank)
-
         );
+
 
 
         if(available.length === 0){
@@ -229,10 +279,11 @@ class RouletteColumn {
             this.used.length = 0;
 
 
-            available = [...this.tanks];
+            available=[...this.tanks];
 
 
         }
+
 
 
         return available;
@@ -248,20 +299,21 @@ class RouletteColumn {
     // Выбор танка
     // ------------------------------------------
 
+
     chooseTank(){
 
 
-        const list = this.getAvailableTanks();
+        const list =
+        this.getAvailableTanks();
 
 
-        const index = Math.floor(
 
-            Math.random() * list.length
-
-        );
-
-
-        const selected = list[index];
+        const selected =
+        list[
+            Math.floor(
+                Math.random()*list.length
+            )
+        ];
 
 
 
@@ -270,6 +322,7 @@ class RouletteColumn {
             this.used.push(selected);
 
         }
+
 
 
         return selected;
@@ -285,22 +338,29 @@ class RouletteColumn {
     // Создание карточки
     // ------------------------------------------
 
+
     createCard(name){
 
 
-        const card = document.createElement("div");
+        const card =
+        document.createElement("div");
 
 
-        card.className = "tank-card";
+        card.className="tank-card";
 
 
 
-        const img = document.createElement("img");
+        const img =
+        document.createElement("img");
 
 
-        img.src = `../assets/tanks/${this.type}/${this.tanks.indexOf(name)+1}.png`;
 
-        img.alt = name;
+        img.src =
+        `../assets/tanks/${this.type}/${this.tanks.indexOf(name)+1}.png`;
+
+
+
+        img.alt=name;
 
 
 
@@ -321,26 +381,26 @@ class RouletteColumn {
     // Создание ленты
     // ------------------------------------------
 
+
     createRoller(selectedTank){
 
 
-        this.track.innerHTML = "";
+        this.track.innerHTML="";
 
 
 
-        let sequence = [];
+        let sequence=[];
 
 
 
-        // создаем длинную ленту
+        // создаём ленту
+        // без огромного пустого хвоста
 
-        for(let i = 0; i < 8; i++){
+        for(let i=0;i<5;i++){
 
 
             sequence.push(
-
                 ...this.tanks
-
             );
 
 
@@ -348,15 +408,14 @@ class RouletteColumn {
 
 
 
-        // вставляем выбранный танк ближе к концу
+        // позиция остановки
 
-        let targetPosition =
-
-            sequence.length - 5;
+        const targetPosition=45;
 
 
 
-        sequence[targetPosition] = selectedTank;
+        sequence[targetPosition]=selectedTank;
+
 
 
 
@@ -364,9 +423,7 @@ class RouletteColumn {
 
 
             this.track.appendChild(
-
                 this.createCard(tank)
-
             );
 
 
@@ -383,14 +440,12 @@ class RouletteColumn {
 
 
 
-
-
     // ------------------------------------------
-    // Запуск
+    // Запуск выбора
     // ------------------------------------------
+
 
     spin(){
-
 
 
         if(this.running){
@@ -400,25 +455,28 @@ class RouletteColumn {
         }
 
 
-        this.running = true;
+
+        this.running=true;
 
 
 
-        const selected = this.chooseTank();
+        const selected =
+        this.chooseTank();
 
 
 
-        const position = this.createRoller(selected);
+
+        const position =
+        this.createRoller(selected);
+
 
 
 
         return {
 
-
             tank:selected,
 
             position:position
-
 
         };
 
@@ -429,48 +487,71 @@ class RouletteColumn {
 
 }
 
+
+
+
+
+
 // ======================================================
 // АНИМАЦИЯ
 // ======================================================
 
+
 function easeOutCubic(x){
 
-    return 1 - Math.pow(1 - x,3);
+    return 1-Math.pow(1-x,3);
 
 }
+
+
 
 
 
 RouletteColumn.prototype.animate=function(data){
 
 
-    const cardSize=SETTINGS.cardWidth+SETTINGS.gap;
 
-    const center=560/2-SETTINGS.cardWidth/2;
+    const cardSize =
+    SETTINGS.cardWidth + SETTINGS.gap;
 
-    const finish=data.position*cardSize-center;
 
-    const start=-Math.random()*300;
 
-    const extra=cardSize*18;
+    const windowWidth =
+    this.track.parentElement.clientWidth;
 
-    const distance=finish+extra-start;
+
+
+    const center =
+    windowWidth/2 -
+    SETTINGS.cardWidth/2;
+
+
+
+
+    const finish =
+    data.position * cardSize -
+    center;
+
+
+
+
+    const start =
+    -Math.random()*500;
+
+
+
+    const distance =
+    finish + 3500 - start;
+
+
 
 
     let startTime=null;
 
 
-    const track=this.track;
-
-    const box=this.nameBox;
 
 
-
-    box.textContent="";
-
-
-
-    const step=(time)=>{
+    const animate=(time)=>{
 
 
         if(!startTime){
@@ -481,7 +562,11 @@ RouletteColumn.prototype.animate=function(data){
 
 
 
-        let progress=(time-startTime)/SETTINGS.spinTime;
+        let progress =
+        (time-startTime) /
+        SETTINGS.spinTime;
+
+
 
         if(progress>1){
 
@@ -491,105 +576,129 @@ RouletteColumn.prototype.animate=function(data){
 
 
 
-        const smooth=easeOutCubic(progress);
+
+        const smooth =
+        easeOutCubic(progress);
 
 
 
-        const current=
 
-            start+
-
-            distance*smooth;
-
+        const current =
+        start +
+        distance*smooth;
 
 
-        track.style.transform=
 
-            `translateX(${-current}px)`;
+
+        this.track.style.transform =
+        `translateX(${-current}px)`;
+
 
 
 
         if(progress<1){
 
-            requestAnimationFrame(step);
+
+            requestAnimationFrame(animate);
+
 
         }
-
         else{
 
-            track.style.transform=
 
-                `translateX(${-finish}px)`;
+            this.track.style.transform =
+            `translateX(${-finish}px)`;
 
 
-            box.textContent=data.tank;
 
-            box.classList.remove("selected");
+            this.nameBox.textContent =
+            data.tank;
 
-            void box.offsetWidth;
 
-            box.classList.add("selected");
+
+            this.resultImg.src =
+            `../assets/tanks/${this.type}/${this.tanks.indexOf(data.tank)+1}.png`;
+
+
+
+            this.resultImg.style.display="block";
+
+
+
+            this.nameBox.classList.remove("selected");
+
+
+            void this.nameBox.offsetWidth;
+
+
+            this.nameBox.classList.add("selected");
+
 
 
             this.running=false;
 
+
         }
 
 
-    }
+
+    };
 
 
 
-    requestAnimationFrame(step);
+
+    requestAnimationFrame(animate);
 
 
-}
 
-
+};
 
 // ======================================================
 // СОЗДАНИЕ РУЛЕТОК
 // ======================================================
 
-const heavyRoulette=new RouletteColumn(
 
+const heavyRoulette =
+new RouletteColumn(
     "TT",
-
     ttTrack,
-
-    ttName
-
+    ttName,
+    ttResult
 );
 
 
-const mediumRoulette=new RouletteColumn(
 
+const mediumRoulette =
+new RouletteColumn(
     "ST",
-
     stTrack,
-
-    stName
-
+    stName,
+    stResult
 );
 
 
-const tdRoulette=new RouletteColumn(
 
+const tdRoulette =
+new RouletteColumn(
     "PT",
-
     ptTrack,
-
-    ptName
-
+    ptName,
+    ptResult
 );
+
+
+
+
 
 // ======================================================
-// ЗАПУСК ВСЕХ РУЛЕТОК
+// ЗАПУСК РУЛЕТКИ
 // ======================================================
 
 
 battleButton.addEventListener("click",()=>{
 
+
+    // защита от повторного запуска
 
     if(
         heavyRoulette.running ||
@@ -603,13 +712,18 @@ battleButton.addEventListener("click",()=>{
 
 
 
-    // состояние повторений
 
-    SETTINGS.repeat = repeatBox.checked;
+    // режим повторения
+
+    SETTINGS.repeat =
+    repeatBox.checked;
 
 
 
-    // очищаем предыдущие результаты
+
+
+    // очистка старых результатов
+
 
     ttName.textContent="...";
 
@@ -619,50 +733,71 @@ battleButton.addEventListener("click",()=>{
 
 
 
-    // блокируем кнопку
+    ttResult.style.display="none";
+
+    stResult.style.display="none";
+
+    ptResult.style.display="none";
+
+
+
+
+
+    // блок кнопки
+
 
     battleButton.disabled=true;
 
-    battleButton.textContent="ГЕНЕРАЦИЯ...";
 
-
-
-    // запускаем выбор танков
-
-
-    const ttResult=
-
-        heavyRoulette.spin();
-
-
-
-    const stResult=
-
-        mediumRoulette.spin();
-
-
-
-    const ptResult=
-
-        tdRoulette.spin();
+    battleButton.textContent=
+    "ГЕНЕРАЦИЯ...";
 
 
 
 
 
-    // запускаем анимацию
 
+
+    // выбираем танки
+
+
+    const ttResultData =
+    heavyRoulette.spin();
+
+
+
+    const stResultData =
+    mediumRoulette.spin();
+
+
+
+    const ptResultData =
+    tdRoulette.spin();
+
+
+
+
+
+
+
+    // небольшая задержка перед стартом
 
     setTimeout(()=>{
 
 
-        heavyRoulette.animate(ttResult);
+        heavyRoulette.animate(
+            ttResultData
+        );
 
 
-        mediumRoulette.animate(stResult);
+        mediumRoulette.animate(
+            stResultData
+        );
 
 
-        tdRoulette.animate(ptResult);
+        tdRoulette.animate(
+            ptResultData
+        );
 
 
 
@@ -672,7 +807,9 @@ battleButton.addEventListener("click",()=>{
 
 
 
-    // возвращаем кнопку
+
+
+    // возврат кнопки
 
 
     setTimeout(()=>{
@@ -680,7 +817,10 @@ battleButton.addEventListener("click",()=>{
 
         battleButton.disabled=false;
 
-        battleButton.textContent="В БОЙ!";
+
+        battleButton.textContent=
+        "В БОЙ!";
+
 
 
     }, SETTINGS.spinTime + 500);
