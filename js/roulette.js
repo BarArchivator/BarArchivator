@@ -10,7 +10,7 @@
 
 const SETTINGS = {
 
-    spinTime: 10000,
+   spinTime:5000,
 
     cardWidth: 320,
 
@@ -505,7 +505,7 @@ class RouletteColumn {
 
 function easeOutCubic(x){
 
-    return 1-Math.pow(1-x,3);
+    return 1-Math.pow(1-x,2);
 
 }
 
