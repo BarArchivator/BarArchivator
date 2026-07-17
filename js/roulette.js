@@ -523,14 +523,6 @@ RouletteColumn.prototype.animate=function(data){
 
 
             box.textContent=data.tank;
-            const cards = [...this.track.children];
-for(let card of cards) {
-    if(card.querySelector('img').alt === data.tank) {
-        card.classList.add("selected"); // выделяем карточку
-    } else {
-        card.classList.remove("selected");
-    }
-}
 
             box.classList.remove("selected");
 
