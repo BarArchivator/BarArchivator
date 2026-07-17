@@ -541,14 +541,13 @@ RouletteColumn.prototype.animate=function(data){
 
 
 
- const start =
--cardSize * 15;
+const start =
+-cardSize * 40;
 
 
 
 const distance =
-finish + 1500 - start;
-
+finish - start;
 
 
 
