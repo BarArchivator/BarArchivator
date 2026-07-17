@@ -10,7 +10,7 @@
 
 const SETTINGS = {
 
-   spinTime:5000,
+   spinTime:10000,
 
     cardWidth: 320,
 
