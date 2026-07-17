@@ -385,56 +385,62 @@ class RouletteColumn {
     createRoller(selectedTank){
 
 
-        this.track.innerHTML="";
+    this.track.innerHTML="";
 
 
-
-        let sequence=[];
-
+    let sequence=[];
 
 
-        // создаём ленту
-        // без огромного пустого хвоста
+    // создаём запас танков до и после выбранного
 
-        for(let i=0;i<5;i++){
+    for(let i=0;i<4;i++){
 
-
-            sequence.push(
-                ...this.tanks
-            );
-
-
-        }
-
-
-
-        // позиция остановки
-
-        const targetPosition=45;
-
-
-
-        sequence[targetPosition]=selectedTank;
-
-
-
-
-        sequence.forEach(tank=>{
-
-
-            this.track.appendChild(
-                this.createCard(tank)
-            );
-
-
-        });
-
-
-
-        return targetPosition;
-
+        sequence.push(
+            ...this.tanks
+        );
 
     }
+
+
+
+    // ставим выбранный танк не в конец,
+    // а в зоне остановки
+
+    const targetPosition =
+    sequence.length - 10;
+
+
+
+    sequence[targetPosition]=selectedTank;
+
+
+
+
+    // добавляем ещё танки после результата
+
+    sequence.push(
+        ...this.tanks.slice(0,10)
+    );
+
+
+
+
+    sequence.forEach(tank=>{
+
+
+        this.track.appendChild(
+            this.createCard(tank)
+        );
+
+
+    });
+
+
+
+    return targetPosition;
+
+
+}
 
 
 
@@ -535,13 +541,13 @@ RouletteColumn.prototype.animate=function(data){
 
 
 
-    const start =
-    -Math.random()*500;
+ const start =
+-cardSize * 15;
 
 
 
-    const distance =
-    finish + 3500 - start;
+const distance =
+finish - start;
 
 
 
