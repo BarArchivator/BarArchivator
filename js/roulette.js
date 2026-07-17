@@ -10,15 +10,17 @@
 
 const SETTINGS = {
 
-   spinTime:1000,
+   spinTime:5000,
 
-    cardWidth: 320,
+    cardWidth:320,
 
-    gap: 50,
+    gap:50,
 
     repeat:false
 
 };
+
+console.log("НОВАЯ ВЕРСИЯ JS ЗАГРУЖЕНА", SETTINGS.spinTime);
 
 
 
