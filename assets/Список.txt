@@ -1,0 +1,124 @@
+TT
+1.113
+2.WZ-111 model 5A
+3.BZ-75
+4.GPT-75
+5.BZ-74-1
+6.116-F3
+7.AMX 50 B
+8.AMX M4 mle. 54
+9.Projet 57
+10.Maus
+11.E 100
+12.Pz.Kpfw. VII
+13.Kampfpanzer 07 P(E)
+14.VK 72.01 (K)
+15.Е 100 Feuerbär
+16.Type 5 Heavy
+17.Type 71
+18.FV215b
+19.Super Conqueror
+20.Vandal
+21.T95/FV4201 Chieftain
+22.FV242B Condor
+23.ИС-4
+24.ИС-7
+25.Объект 705А
+26.Объект 277
+27.СТ-II
+28.Объект 780
+29.Объект 279 ранний
+30.Объект 260
+31.ТЭТ-100
+32.Объект 718Б
+33.Объект 278
+34.T110E5
+35.T57 Heavy Tank
+36.M-V-Y
+37.H-3
+38.Astron-FL
+39.Vz. 55
+40.Warrior
+41.Kranvagn
+42.60TP Lewandowskiego
+43.Czołg (P) wz.46
+44.Rinoceronte
+45.Orso
+
+ST
+1.121
+2.121B
+3.DZT-159
+4.Bat.-Châtillon 25 t
+5.AMX 30 B
+6.E 50 Ausf. M
+7.Leopard 1
+8.Erich Konzept I
+9.STB-1
+10.Centurion Action X
+11.Concept No. 5
+12.Nemesis
+13.Vulcan
+14.Т-62А
+15.Объект 907
+16.Объект 140
+17.Объект 430У
+18.К-91
+19.Т-22 ср.
+20.Объект 168-122 Квант
+21.M48A5 Patton
+22.M60
+23.T95E6
+24.OTAC MT-58
+25.MBT-59
+26.TVP T 50/51
+27.UDES 15/16
+28.CS-63
+29.CS-63 Wilk
+30.Progetto M40 mod. 65
+31.Lion
+32.Carro da Combattimento 45 t
+33.Merkava LP
+34.T-54D
+
+PT
+1.WZ-113G FT
+2.114 SP2
+3.AMX 50 Foch (155)
+4.AMX 50 Foch B
+5.120 AC Gendarme
+6.Tornade
+7.Jagdpanzer E 100
+8.Waffenträger auf E 100
+9.Grille 15
+10.Sturmtiger
+11.StuG Maus 17 cm
+12.Ho-Ri 3
+13.FV215b (183)
+14.FV4005 Stage II
+15.FV217 Badger
+16.Объект 268
+17.Объект 268 Вариант 4
+18.Объект 268 Вариант 5
+19.СУ-122В
+20.Объект 120 «Таран»
+21.T110E4
+22.T110E3
+23.XM57
+24.Strv 103B
+25.Wz.70 Żубр
+26.Controcarro 3 Minotauro
+
+flags
+1. СССР
+2. Германия
+3. США
+4. Китай
+5. Франция
+6. Великобритания
+7. Япония
+8. Чехия
+9. Швеция
+10. Польша
+11. Италия
+12. Сборная нация
