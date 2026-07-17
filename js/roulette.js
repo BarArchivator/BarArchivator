@@ -547,7 +547,7 @@ RouletteColumn.prototype.animate=function(data){
 
 
 const distance =
-finish - start;
+finish + 1500 - start;
 
 
 
