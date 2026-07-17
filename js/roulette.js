@@ -382,7 +382,7 @@ class RouletteColumn {
     // ------------------------------------------
 
 
-    createRoller(selectedTank){
+   createRoller(selectedTank){
 
 
     this.track.innerHTML="";
@@ -391,37 +391,45 @@ class RouletteColumn {
     let sequence=[];
 
 
-    // создаём запас танков до и после выбранного
+    // 20 танков перед результатом
 
-    for(let i=0;i<4;i++){
+    for(let i=0;i<20;i++){
 
         sequence.push(
-            ...this.tanks
+            this.tanks[
+                Math.floor(
+                    Math.random()*this.tanks.length
+                )
+            ]
         );
 
     }
 
 
 
-    // ставим выбранный танк не в конец,
-    // а в зоне остановки
+    // сам результат
 
     const targetPosition =
-    sequence.length - 10;
+    sequence.length;
+
+
+    sequence.push(selectedTank);
 
 
 
-    sequence[targetPosition]=selectedTank;
+    // 20 танков после
 
+    for(let i=0;i<20;i++){
 
+        sequence.push(
+            this.tanks[
+                Math.floor(
+                    Math.random()*this.tanks.length
+                )
+            ]
+        );
 
-
-    // добавляем ещё танки после результата
-
-    sequence.push(
-        ...this.tanks.slice(0,10)
-    );
-
+    }
 
 
 
